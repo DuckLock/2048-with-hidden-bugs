@@ -45,7 +45,6 @@ int main() {
 }
 
 void check() {
-    char zeronum = 0;
     for (char i = 0; i < 4; i++) {
         for (char j = 0; j < 4; j++) {
             if (tmp[i][j] != grid[i][j]) {
@@ -243,6 +242,7 @@ void update() {
                 }
             }
             addnum();
+            steps = -1;
             while (GetAsyncKeyState(0x52) < 0) {
                 Sleep(26);
             }
@@ -261,7 +261,7 @@ void draw() {
     cout << "*   Press R to restart game!       *" << endl;
     cout << "*   Press Q to quit at any time.   *" << endl;
     cout << "**                                **" << endl;
-    cout << "************************************" << " Steps: " << steps << endl;
+    cout << "************************************" << " Steps: " << steps << "\t\t" << endl;
     for (char i = 0; i < 4; i++) {
         for (char j = 0; j < 4; j++) {
             switch (grid[i][j]) {
